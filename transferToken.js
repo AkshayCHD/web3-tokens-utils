@@ -24,10 +24,14 @@ const Accounts = JSON.parse(process.env.ACCOUNTS);
 const Tokens = JSON.parse(process.env.TOKENS);
 
 const tokenContract = require("./abi.json")
+let WEB3_PROVIDER="http://127.0.0.1:8545"
 
+if(process.env.WEB3_PROVIDER) {
+	WEB3_PROVIDER = process.env.WEB3_PROVIDER
+}
 const transferTokens = async (fromPrivate, fromPublic, to, token, amount) => {
   	// connect to any peer; using infura here
-	const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+	const web3 = new Web3(new Web3.providers.HttpProvider(WEB3_PROVIDER));
 	var contract = new web3.eth.Contract(tokenContract, token);
 	const decryptedAccount = web3.eth.accounts.privateKeyToAccount(fromPrivate);
 	

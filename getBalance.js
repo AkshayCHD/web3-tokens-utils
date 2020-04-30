@@ -24,8 +24,13 @@ const Tokens = JSON.parse(process.env.TOKENS);
 
 const tokenContract = require("./abi.json")
 
+let WEB3_PROVIDER="http://127.0.0.1:8545"
+
+if(process.env.WEB3_PROVIDER) {
+	WEB3_PROVIDER = process.env.WEB3_PROVIDER
+}
 // connect to any peer; using infura here
-const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:8545"));
+const web3 = new Web3(new Web3.providers.HttpProvider(WEB3_PROVIDER));
 
 const getBalance = async (account, token) => {
     try {
