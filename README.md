@@ -34,10 +34,10 @@ the parameters needed are `--token` that contains the token address `--fromPubli
 ### Method 2
 The problem with above method is that we have to provide all the credentials again and again, so what we can do is keeping all those details saved as environment variables and access them using their indexes.
 The environment variables required are 2 JSON arrays `ACCOUNTS` and `TOKENS`, 
-
+```
 ACCOUNTS= [{"private":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","public":"0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},{"private":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx","public":"0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}]   
 TOKENS= [{"public":"0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},{"public":"0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}]
-
+```
 NOTE: Make sure that the environment variables are assigned array that is written is single line. You can get the exact env variables by
 ```
 var ACCOUNTS = [
